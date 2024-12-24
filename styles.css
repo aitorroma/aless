@@ -514,32 +514,146 @@ h1 {
 
 @media (max-width: 600px) {
     body {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .christmas-message h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .christmas-message p {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    .gifts-container {
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gift {
+        width: 80%;
+        max-width: 250px;
+        height: auto;
+        padding: 25px 15px;
+        margin: 0;
+    }
+
+    .gift:hover {
+        transform: scale(1.05);
+    }
+
+    .gift.disabled:hover {
+        transform: none;
+    }
+
+    .gift i {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .gift span {
+        font-size: 1.2rem;
+    }
+
+    #result {
         padding: 15px;
     }
-    
-    h1 {
-        font-size: 2.5rem;
+
+    #result h2 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
     }
-    
-    .gift {
-        width: 200px;
-        padding: 20px;
+
+    .prize-amount {
+        font-size: 2rem;
+        margin: 15px 0;
     }
-    
-    .gift-icon {
-        width: 100px;
-        height: 100px;
+
+    .prize-title {
+        font-size: 1.3rem;
     }
-    
-    .gift-icon .fa-gift {
-        font-size: 80px;
-    }
-    
-    .message-content {
+
+    .prize-text {
         font-size: 1.1rem;
+        margin: 10px 0;
     }
-    
-    .christmas-message {
-        padding: 30px;
+
+    .congratulations {
+        font-size: 1.4rem;
+        margin: 15px 0;
+    }
+
+    .gift-image {
+        width: 90%;
+        max-width: 280px;
+        margin: 15px auto;
+    }
+
+    .gift-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .features-title {
+        font-size: 1.2rem;
+        margin: 20px 0 15px;
+    }
+
+    .features-list {
+        padding: 0 10px;
+    }
+
+    .feature-item {
+        font-size: 1rem;
+        padding: 10px 15px;
+        margin: 8px 0;
+    }
+
+    .amazon-button {
+        width: 90%;
+        max-width: 280px;
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        margin: 20px auto;
+    }
+
+    .final-message {
+        font-size: 1.1rem;
+        margin: 20px 0 10px;
+    }
+
+    .final-message p {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .christmas-message h1 {
+        font-size: 1.6rem;
+    }
+
+    .gift {
+        width: 90%;
+    }
+
+    .prize-amount {
+        font-size: 1.8rem;
+    }
+
+    .amazon-button {
+        width: 95%;
+        font-size: 1rem;
+        padding: 10px 15px;
     }
 }
