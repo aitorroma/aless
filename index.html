@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalo di Natale per Alessia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="christmas-message">
+            <div class="snowflakes">
+                <span>❄️</span>
+                <span>⭐</span>
+                <span>❄️</span>
+            </div>
+            <h1>Buon Natale, Alessia! 🎄</h1>
+            <div class="message-content">
+                <p class="greeting">✨ <strong>Cara Alessia,</strong></p>
+                
+                <p>🎅 In questo Natale pieno di magia, voglio sorprenderti con qualcosa di davvero speciale.</p>
+                
+                <p>🎁 Sai che ogni anno scopri sempre i miei regali, ma questa volta ho deciso di alzare il livello! Davanti a te ci sono <strong>due regali misteriosi</strong>, ma c'è una piccola regola: <strong>puoi sceglierne solo uno</strong>.</p>
+                
+                <p>💫 Quello che sceglierai parlerà al tuo cuore... e spero che la sorpresa sia degna del tuo sorriso. Lasciati guidare dalla magia del Natale e dal mio affetto per te.</p>
+                
+                <p class="ps"><strong>PS:</strong> Anche quel fidanzato che sempre "brontoli" perché è col suo telefonino... ha dato una mano a trovare qualcosa di perfetto per te. 🎄</p>
+                
+                <p class="final-greeting">✨ <strong>Buon Natale, cara Alessia.</strong> Scegli con il cuore. ❤️</p>
+            </div>
+        </div>
+        
+        <div class="gifts-section">
+            <h2>✨ I Tuoi Regali Misteriosi ✨</h2>
+            <div class="gifts-container">
+                <div class="gift" id="gift1">
+                    <div class="gift-icon">
+                        <i class="fas fa-gift"></i>
+                        <div class="gift-bow">
+                            <i class="fas fa-ribbon"></i>
+                        </div>
+                    </div>
+                    <button onclick="selectGift(1)" class="gift-button">
+                        <span class="button-content">
+                            <i class="fas fa-star"></i>
+                            Regalo Misterioso 1
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="gift" id="gift2">
+                    <div class="gift-icon">
+                        <i class="fas fa-gift"></i>
+                        <div class="gift-bow">
+                            <i class="fas fa-ribbon"></i>
+                        </div>
+                    </div>
+                    <button onclick="selectGift(2)" class="gift-button">
+                        <span class="button-content">
+                            <i class="fas fa-star"></i>
+                            Regalo Misterioso 2
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="result" class="hidden">
+            <h2>🎉 Sorpresa! 🎉</h2>
+            <p id="selected-gift-message"></p>
+            <div class="final-message">
+                <p>✨ Ti auguro un Natale meraviglioso! 🎄✨</p>
+            </div>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

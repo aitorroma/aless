@@ -1,0 +1,545 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(10px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(-10px) rotate(360deg);
+    }
+}
+
+@keyframes giftBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255, 105, 180, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.christmas-message {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.snowflakes {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+h1 {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 3rem;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
+                 0 0 20px rgba(255, 215, 0, 0.3);
+    margin: 20px 0;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8),
+                       0 0 30px rgba(255, 215, 0, 0.6); }
+}
+
+.message-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transform: perspective(1000px) rotateX(2deg);
+}
+
+.message-content p {
+    margin: 20px 0;
+    line-height: 1.8;
+    font-size: 1.15rem;
+    letter-spacing: 0.3px;
+}
+
+.message-content .greeting {
+    font-size: 1.5rem;
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.message-content .ps {
+    font-style: italic;
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 15px;
+    border-left: 3px solid #ffd700;
+    transform: perspective(1000px) rotateX(-1deg);
+}
+
+.message-content .final-greeting {
+    font-size: 1.4rem;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.message-content .final-greeting::after {
+    content: '❄️';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+.message-content strong {
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.gifts-section {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gifts-section h2 {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 2.2rem;
+    color: #ff69b4;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+    margin-bottom: 40px;
+}
+
+.gifts-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.gift {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.gift:hover {
+    transform: translateY(-10px);
+}
+
+.gift-icon {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gift-icon .fa-gift {
+    font-size: 80px;
+    color: #ff69b4;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.gift-bow {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffd700;
+    font-size: 35px;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.gift-button {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.gift-button:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(10%, 10%);
+}
+
+.gift-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-content .fa-star {
+    font-size: 0.8em;
+    animation: twinkle 1.5s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.hidden {
+    display: none;
+}
+
+#result {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 40px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease-out;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.feature-item {
+    font-size: 1.1rem;
+    color: #fff;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    text-align: left;
+    transition: all 0.3s ease;
+    border-left: 3px solid #ffd700;
+    margin: 0;
+}
+
+.feature-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.features-title {
+    font-size: 1.3rem;
+    color: #ffd700;
+    margin: 25px 0 15px 0;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.amazon-button-container {
+    margin: 30px auto 20px;
+    text-align: center;
+    padding: 5px;
+    max-width: 280px;
+}
+
+.amazon-button {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 15px 40px;
+    background: #FF9900;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.amazon-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 153, 0, 0.4);
+    background: #ffac33;
+}
+
+.amazon-button:active {
+    transform: translateY(0);
+}
+
+.amazon-button .fa-amazon {
+    font-size: 1.3em;
+}
+
+.final-message {
+    margin-top: 25px;
+    font-size: 1.3rem;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    filter: grayscale(0.5);
+}
+
+#selected-gift-message {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.prize-text {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.congratulations {
+    font-size: 2rem;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    font-family: 'Mountains of Christmas', cursive;
+    margin: 20px 0;
+    animation: pulse 2s infinite;
+}
+
+.prize-title {
+    font-size: 1.8rem;
+    color: #ff69b4;
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.prize-amount {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 15px;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.9),
+                     0 0 40px rgba(255, 215, 0, 0.5);
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gift-image-container {
+    margin: 20px auto;
+    text-align: center;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gift-image {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin: 15px auto;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gift-image:hover {
+    transform: scale(1.02);
+}
+
+.gift-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .gift {
+        width: 200px;
+        padding: 20px;
+    }
+    
+    .gift-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .gift-icon .fa-gift {
+        font-size: 80px;
+    }
+    
+    .message-content {
+        font-size: 1.1rem;
+    }
+    
+    .christmas-message {
+        padding: 30px;
+    }
+}
